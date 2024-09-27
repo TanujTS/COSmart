@@ -29,7 +29,7 @@ class _LayoutPageState extends State<LayoutPage> {
     return Scaffold(
       body: _pages[currentIndex],
       bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          backgroundColor: Colors.transparent,
           color: Theme.of(context).primaryColor,
           buttonBackgroundColor: Theme.of(context).primaryColor,
           index: currentIndex,
