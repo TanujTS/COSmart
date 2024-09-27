@@ -1,25 +1,26 @@
 import 'package:cosmart/components/colorscheme.dart';
 import 'package:flutter/material.dart';
 
-class PerformanceTracker extends StatefulWidget {
-  const PerformanceTracker({super.key});
+class GraphView extends StatefulWidget {
+  const GraphView({super.key});
 
   @override
-  State<PerformanceTracker> createState() => _PerformanceTrackerState();
+  State<GraphView> createState() => _GraphViewState();
 }
 
-class _PerformanceTrackerState extends State<PerformanceTracker> {
+class _GraphViewState extends State<GraphView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: ColorTheme.secBackground,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Performance Tracker"),
+          title: const Text("A N A L Y T I C S",
+              style: TextStyle(fontWeight: FontWeight.bold)),
           backgroundColor: ColorTheme.background,
         ),
         body: const Center(
-          child: Text("Performance Tracker"),
+          child: Text("Graphs and Analytics regarding the chiller go here."),
         ));
   }
 }

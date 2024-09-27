@@ -1,5 +1,6 @@
 import 'package:cosmart/components/colorscheme.dart';
 import 'package:flutter/material.dart';
+import 'package:pie_chart/pie_chart.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,17 +16,143 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: ColorTheme.secBackground,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Overview"),
+          title: const Text("D A S H B O A R D ",
+              style: TextStyle(fontWeight: FontWeight.bold)),
           backgroundColor: ColorTheme.background,
         ),
-        body: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text(index.toString()),
-              title: const Text("Performance"),
-            );
-          },
+        body: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(top: 10, right: 50, left: 50),
+              child: Text(
+                "Chiller Load & Efficiency",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              height: 200,
+              width: 500,
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  color: ColorTheme.secondary,
+                  borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                      child: Container(
+                          height: 200,
+                          margin: const EdgeInsets.only(right: 5),
+                          decoration: BoxDecoration(
+                              color: ColorTheme.background,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.all(10),
+                                child: Text(
+                                  "Load %",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20),
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10),
+                                  child: PieChart(
+                                    legendOptions: const LegendOptions(
+                                      showLegendsInRow: true,
+                                      legendPosition: LegendPosition.top,
+                                      showLegends: false,
+                                      legendTextStyle: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    dataMap: const {"Chiller Load": 50},
+                                    chartType: ChartType.ring,
+                                    baseChartColor: Colors.grey,
+                                    colorList: const [Colors.greenAccent],
+                                    chartValuesOptions:
+                                        const ChartValuesOptions(
+                                            showChartValuesInPercentage: true,
+                                            chartValueStyle: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.black)),
+                                    totalValue: 100,
+                                    chartRadius:
+                                        MediaQuery.of(context).size.width / 3,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ))),
+                  Expanded(
+                    child: Container(
+                        height: 200,
+                        margin: const EdgeInsets.only(left: 5),
+                        decoration: BoxDecoration(
+                            color: ColorTheme.background,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Column(
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                "Efficiency %",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: PieChart(
+                                  legendOptions: const LegendOptions(
+                                    showLegendsInRow: true,
+                                    legendPosition: LegendPosition.top,
+                                    showLegends: false,
+                                    legendTextStyle: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  dataMap: const {"Efficiency": 75},
+                                  chartType: ChartType.ring,
+                                  baseChartColor: Colors.grey,
+                                  colorList: const [Colors.blueAccent],
+                                  chartValuesOptions: const ChartValuesOptions(
+                                      showChartValuesInPercentage: true,
+                                      chartValueStyle: TextStyle(
+                                          fontSize: 14, color: Colors.black)),
+                                  totalValue: 100,
+                                  chartRadius:
+                                      MediaQuery.of(context).size.width / 3,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )),
+                  ),
+                ],
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 10, right: 50, left: 50),
+              child: Text(
+                "Weather & Humidity",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
         ));
   }
 }

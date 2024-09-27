@@ -1,6 +1,6 @@
 import 'package:cosmart/components/colorscheme.dart';
 import 'package:cosmart/pages/home_page.dart';
-import 'package:cosmart/pages/performance_tracker.dart';
+import 'package:cosmart/pages/graphs_view.dart';
 import 'package:cosmart/pages/standby.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ class _LayoutPageState extends State<LayoutPage> {
   int currentIndex = 0;
   final List _pages = [
     const HomePage(),
-    const PerformanceTracker(),
+    const GraphView(),
     const StandbyPage()
   ];
   void _updateNavigation(int index) {
@@ -36,9 +36,9 @@ class _LayoutPageState extends State<LayoutPage> {
           index: currentIndex,
           onTap: _updateNavigation,
           items: const [
-            Icon(Icons.home),
-            Icon(Icons.monitor),
-            Icon(Icons.calculate)
+            Icon(Icons.dashboard_rounded),
+            Icon(Icons.auto_graph),
+            Icon(Icons.settings)
           ]),
     );
   }

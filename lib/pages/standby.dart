@@ -15,11 +15,11 @@ class _StandbyPageState extends State<StandbyPage> {
         backgroundColor: ColorTheme.secBackground,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Standby"),
+          title: const Text("Settings"),
           backgroundColor: ColorTheme.background,
         ),
         body: Center(
-          child: Text("Standby"),
+          child: Text("Settings"),
         ));
   }
 }
