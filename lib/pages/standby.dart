@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cosmart/components/colorscheme.dart';
 
 class StandbyPage extends StatefulWidget {
   const StandbyPage({super.key});
@@ -10,6 +11,15 @@ class StandbyPage extends StatefulWidget {
 class _StandbyPageState extends State<StandbyPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+        backgroundColor: ColorTheme.secBackground,
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text("Standby"),
+          backgroundColor: ColorTheme.background,
+        ),
+        body: Center(
+          child: Text("Standby"),
+        ));
   }
 }

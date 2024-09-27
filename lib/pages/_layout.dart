@@ -1,3 +1,4 @@
+import 'package:cosmart/components/colorscheme.dart';
 import 'package:cosmart/pages/home_page.dart';
 import 'package:cosmart/pages/performance_tracker.dart';
 import 'package:cosmart/pages/standby.dart';
@@ -29,7 +30,9 @@ class _LayoutPageState extends State<LayoutPage> {
     return Scaffold(
       body: _pages[currentIndex],
       bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: ColorTheme.secBackground,
+          buttonBackgroundColor: ColorTheme.secBackground,
+          color: ColorTheme.background,
           index: currentIndex,
           onTap: _updateNavigation,
           items: const [
