@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "756922009598",
+    "project_id": "cosmart-b38cf",
+    "storage_bucket": "cosmart-b38cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756922009598:android:31ccca015a1229a2b4a2af",
+        "android_client_info": {
+          "package_name": "com.example.cosmart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSGhYx8R5STp21z-K0EKX3Nr0P4hKh78g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

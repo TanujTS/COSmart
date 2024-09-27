@@ -1,8 +1,11 @@
 import 'package:cosmart/pages/_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async{
   runApp(const COSmart());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(); 
 }
 
 class COSmart extends StatelessWidget {
@@ -10,7 +13,7 @@ class COSmart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LayoutPage(),
     );

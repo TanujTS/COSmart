@@ -13,7 +13,7 @@ class LayoutPage extends StatefulWidget {
 
 class _LayoutPageState extends State<LayoutPage> {
   int currentIndex = 0;
-  final List _pages = [HomePage(), PerformanceTracker(), StandbyPage()];
+  final List _pages = [const HomePage(), const PerformanceTracker(), const StandbyPage()];
   void _updateNavigation(int index) {
     setState(() {
       currentIndex = index;
