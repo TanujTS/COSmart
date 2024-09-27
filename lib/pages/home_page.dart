@@ -1,4 +1,3 @@
-import 'package:cosmart/components/colorscheme.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 
@@ -13,12 +12,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: ColorTheme.secBackground,
         appBar: AppBar(
+          backgroundColor: Theme.of(context).primaryColor,
+          elevation: 12,
           centerTitle: true,
           title: const Text("D A S H B O A R D ",
               style: TextStyle(fontWeight: FontWeight.bold)),
-          backgroundColor: ColorTheme.background,
         ),
         body: Column(
           children: [
@@ -38,8 +37,8 @@ class _HomePageState extends State<HomePage> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: ColorTheme.secondary,
-                  borderRadius: BorderRadius.circular(10)),
+                  borderRadius: BorderRadius.circular(10),
+                  color: Theme.of(context).cardColor),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -48,8 +47,8 @@ class _HomePageState extends State<HomePage> {
                           height: 200,
                           margin: const EdgeInsets.only(right: 5),
                           decoration: BoxDecoration(
-                              color: ColorTheme.background,
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(10),
+                              color: Theme.of(context).dividerColor),
                           child: Column(
                             children: [
                               const Padding(
@@ -97,8 +96,8 @@ class _HomePageState extends State<HomePage> {
                         height: 200,
                         margin: const EdgeInsets.only(left: 5),
                         decoration: BoxDecoration(
-                            color: ColorTheme.background,
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(10),
+                            color: Theme.of(context).dividerColor),
                         child: Column(
                           children: [
                             const Padding(
@@ -146,6 +145,24 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(top: 10, right: 50, left: 50),
               child: Text(
                 "Weather & Humidity",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              height: 100,
+              width: 500,
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Theme.of(context).cardColor),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(
+                "Graphs & Analytics",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
